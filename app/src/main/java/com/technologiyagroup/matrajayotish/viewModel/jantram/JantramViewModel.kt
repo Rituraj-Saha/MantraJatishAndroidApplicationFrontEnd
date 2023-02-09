@@ -6,8 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.technologiyagroup.matrajayotish.model.jantram.JantramResponse
 import com.technologiyagroup.matrajayotish.model.user.NetworkResult
+import com.technologiyagroup.matrajayotish.repositories.jantram.JantramRepository
 
-import com.technologiyagroup.matrajayotish.repositories.jantram.JantramRepostory
+
 
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -15,7 +16,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class JantramViewModel @Inject constructor(
-    private val jantramRepostory: JantramRepostory,
+    private val jantramRepostory: JantramRepository,
 ) : ViewModel() {
     private var _jantramResponse = MutableLiveData<NetworkResult<JantramResponse>>()
     val jantramResponse: LiveData<NetworkResult<JantramResponse>> = _jantramResponse

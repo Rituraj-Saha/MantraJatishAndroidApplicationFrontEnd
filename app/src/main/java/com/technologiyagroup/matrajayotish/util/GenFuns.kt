@@ -1,19 +1,16 @@
 package com.technologiyagroup.bookmypujo.utils
 
-import android.R
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.view.LayoutInflater
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.technologiyagroup.matrajayotish.model.commonRecyclModel.PujaTipsRecyclModel
 import com.technologiyagroup.matrajayotish.ui.LoginActivity
 import com.technologiyagroup.matrajayotish.ui.fragments.HomeFragment
 import com.technologiyagroup.matrajayotish.util.Constants
@@ -62,5 +59,12 @@ object GenFuns {
         context.startActivity(intent)
         context.finish()
     }
-
+    fun commaSeparatedToList(input:String):ArrayList<PujaTipsRecyclModel>{
+        var mArr = input.split(",")
+        var mList = ArrayList<PujaTipsRecyclModel>()
+        for(i in mArr){
+            mList.add(PujaTipsRecyclModel(i))
+        }
+        return mList
+    }
 }

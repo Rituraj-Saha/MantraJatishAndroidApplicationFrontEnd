@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdInsOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        android:layout_below="@+id/txtHeading"
+        >
+        <TextView
+            android:id="@+id/pujaTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. Draw the Yantram as per given instruction."
+            android:gravity="center"
+            android:fontFamily="@font/eigerdals_medium"
+            android:padding="20dp"/>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
