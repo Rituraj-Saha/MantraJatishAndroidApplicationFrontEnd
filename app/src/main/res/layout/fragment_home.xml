@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:orientation="vertical"
+            android:background="#FFFAE4"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".45"
+                android:background="@drawable/home_back_grad"
+                >
+
+            </LinearLayout>
+        </LinearLayout>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/homImg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="astrology.json"
+            app:lottie_loop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            />
+        <TextView
+            android:id="@+id/txtHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="General\n purpose Guidelines"
+            android:textSize="25dp"
+            android:layout_below="@+id/homImg"
+            android:fontFamily="@font/eigerdals_medium"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/white"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/txtHeading"
+            >
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/crdInsOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="5dp"
+                        android:layout_below="@+id/txtHeading"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1. Draw the Yantram as per given instruction."
+                            android:gravity="center"
+                            android:fontFamily="@font/eigerdals_medium"
+                            android:padding="20dp"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/crdInsTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="5dp"
+                        android:layout_below="@+id/txtHeading"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1. Draw the Yantram as per given instruction."
+                            android:gravity="center"
+                            android:fontFamily="@font/eigerdals_medium"
+                            android:padding="20dp"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/crdInsThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="5dp"
+                        android:layout_below="@+id/txtHeading"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1. Draw the Yantram as per given instruction."
+                            android:gravity="center"
+                            android:fontFamily="@font/eigerdals_medium"
+                            android:padding="20dp"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/crdInsfour"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="5dp"
+                        android:layout_below="@+id/txtHeading"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1. Draw the Yantram as per given instruction."
+                            android:gravity="center"
+                            android:fontFamily="@font/eigerdals_medium"
+                            android:padding="20dp"/>
+                    </androidx.cardview.widget.CardView>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"/>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
