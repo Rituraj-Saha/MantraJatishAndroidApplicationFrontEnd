@@ -23,8 +23,8 @@
         android:id="@+id/txtHeading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your\n Customise Mantra"
-        android:textSize="25dp"
+        android:text="@string/your_n_customise_mantra"
+        android:textSize="20sp"
         android:fontFamily="@font/eigerdals_medium"
         android:textStyle="bold"
         android:gravity="center"
@@ -124,6 +124,7 @@
                             android:layout_height="wrap_content"
                             android:text="1. Draw the Yantram as per given instruction."
                             android:gravity="center"
+                            android:textStyle="bold"
                             android:fontFamily="@font/eigerdals_medium"
                             android:padding="20dp"/>
                     </androidx.cardview.widget.CardView>
@@ -142,6 +143,7 @@
                             android:layout_height="wrap_content"
                             android:text="1. Draw the Yantram as per given instruction."
                             android:gravity="center"
+                            android:textStyle="bold"
                             android:fontFamily="@font/eigerdals_medium"
                             android:padding="20dp"/>
                     </androidx.cardview.widget.CardView>
@@ -160,6 +162,7 @@
                             android:layout_height="wrap_content"
                             android:text="1. Draw the Yantram as per given instruction."
                             android:gravity="center"
+                            android:textStyle="bold"
                             android:fontFamily="@font/eigerdals_medium"
                             android:padding="20dp"/>
                     </androidx.cardview.widget.CardView>
@@ -177,6 +180,7 @@
                             android:layout_height="wrap_content"
                             android:text="1. Draw the Yantram as per given instruction."
                             android:gravity="center"
+                            android:textStyle="bold"
                             android:fontFamily="@font/eigerdals_medium"
                             android:padding="20dp"/>
                     </androidx.cardview.widget.CardView>

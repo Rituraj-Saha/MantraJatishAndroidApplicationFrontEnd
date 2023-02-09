@@ -79,6 +79,7 @@
                     android:layout_height="wrap_content"
                     android:text="1. Draw the Yantram as per given instruction."
                     android:gravity="center"
+                    android:textStyle="bold"
                     android:fontFamily="@font/eigerdals_medium"
                     android:padding="20dp"/>
             </androidx.cardview.widget.CardView>
@@ -97,6 +98,7 @@
                         android:layout_height="wrap_content"
                         android:text="1. Draw the Yantram as per given instruction."
                         android:gravity="center"
+                        android:textStyle="bold"
                         android:fontFamily="@font/eigerdals_medium"
                         android:padding="20dp"/>
                 </androidx.cardview.widget.CardView>
@@ -115,6 +117,7 @@
                             android:layout_height="wrap_content"
                             android:text="1. Draw the Yantram as per given instruction."
                             android:gravity="center"
+                            android:textStyle="bold"
                             android:fontFamily="@font/eigerdals_medium"
                             android:padding="20dp"/>
                     </androidx.cardview.widget.CardView>
@@ -132,6 +135,7 @@
                             android:layout_height="wrap_content"
                             android:text="1. Draw the Yantram as per given instruction."
                             android:gravity="center"
+                            android:textStyle="bold"
                             android:fontFamily="@font/eigerdals_medium"
                             android:padding="20dp"/>
                     </androidx.cardview.widget.CardView>

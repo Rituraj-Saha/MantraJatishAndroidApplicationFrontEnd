@@ -1,15 +1,21 @@
 package com.technologiyagroup.matrajayotish.ui
 
 import android.content.DialogInterface
+import android.content.Intent
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Bundle
+import android.util.DisplayMetrics
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.technologiyagroup.bookmypujo.utils.GenFuns
+import com.technologiyagroup.matrajayotish.MainActivity
 import com.technologiyagroup.matrajayotish.R
 import com.technologiyagroup.matrajayotish.databinding.ActivityHomeBinding
 import com.technologiyagroup.matrajayotish.ui.fragments.*
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_home.*
+import java.util.*
+
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
@@ -21,11 +27,26 @@ class HomeActivity : AppCompatActivity() {
     lateinit var homeFragment: HomeFragment
     lateinit var pujaFragment: PujaFragment
     lateinit var tipsFragment: TipsFragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        binding.swLang.setOnCheckedChangeListener { compoundButton, b ->
+            val message = if (b) "BN" else "EN"
+           var myLocale = Locale(message)
+            val res: Resources = resources
+            val dm: DisplayMetrics = res.getDisplayMetrics()
+            val conf: Configuration = res.getConfiguration()
+            conf.locale = myLocale
+            res.updateConfiguration(conf, dm)
+//            val refresh = Intent(this, HomeActivity::class.java)
+//            startActivity(refresh);
+            GenFuns.replaceFragment(mantramFragment,this,binding.frameHome)
+        }
+
         mantramFragment = MantramFragment();
         jantramFragment = JantramFragment()
         homeFragment = HomeFragment()
