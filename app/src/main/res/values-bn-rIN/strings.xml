@@ -3,4 +3,13 @@
     <string name="app_name">Matrajayotish</string>
     <string name="your_n_customise_mantra">আপনার\n নির্ধারিত মন্ত্র</string>
     <string name="general_n_purpose_guidelines">সাধারণ\n নিয়মাবলী</string>
+    <string name="your_n_customise_jantram">আপনার নির্ধারিত\n যন্ত্র  </string>
+    <string name="_1_draw_the_yantram_as_per_given_instruction">নির্ধারিত নিয়ম অনুযায়ী\n যন্ত্রটি আঁকুন</string>
+    <string name="_2_listen_and_try_to_chant_the_mantra_as_per_given_instruction">নির্ধারিত নিয়ম অনুযায়ী\n মন্ত্র শুনুন ও পাঠ করুন</string>
+    <string name="_3_perform_puja_of_the_mentioned_deity_god">নির্ধারিত ঠাকুরের\n পূজো করুন</string>
+    <string name="_4_try_to_follow_the_tips">নির্ধারিত টোটকা গুলো\n মেনে চলুন </string>
+    <string name="mantra">মন্ত্র</string>
+    <string name="jantram">যন্ত্রম</string>
+    <string name="puja">পূজো</string>
+    <string name="tips">টোটকা</string>
 </resources>

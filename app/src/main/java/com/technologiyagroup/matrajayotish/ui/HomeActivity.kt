@@ -31,7 +31,7 @@ class HomeActivity : AppCompatActivity() {
     lateinit var homeFragment: HomeFragment
     lateinit var pujaFragment: PujaFragment
     lateinit var tipsFragment: TipsFragment
-    lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -39,18 +39,16 @@ class HomeActivity : AppCompatActivity() {
         setContentView(view)
 
 
-        if(intent.getStringExtra("CURRENT_LANG")!=null){
-            if(intent.getStringExtra("CURRENT_LANG").equals("BN"))
-            {
-                binding.swLang.isChecked = false;
-            }
-            else{
+        var con = resources.configuration
+        Logger.log("currentLocal",con.locale.language)
+        if(con.locale.language.equals("en",true)){
+
                 binding.swLang.isChecked = true;
-            }
+
         }
         else
         {
-            binding.swLang.isChecked = true;
+            binding.swLang.isChecked = false;
         }
 
 

@@ -86,7 +86,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".4"
+            android:layout_weight=".3"
             android:orientation="horizontal"
             >
         <TextView
@@ -116,7 +116,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_weight=".1"
+            android:layout_weight=".2"
             android:weightSum="1"
             >
 
@@ -171,7 +171,7 @@
                 android:drawableTop="@drawable/baseline_self_improvement_24"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:text="Mantra"
+                android:text="@string/mantra"
                 android:fontFamily="@font/pinot_grigio_modern_w00_bold"
                 android:textAllCaps="false"
                 android:textColor="@color/white">
@@ -193,7 +193,7 @@
                 android:drawableTop="@drawable/baseline_all_inclusive_24"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:text="Jantram"
+                android:text="@string/jantram"
                 android:textAllCaps="false"
                 android:fontFamily="@font/pinot_grigio_modern_w00_bold"
                 android:paddingBottom="5dp"
@@ -230,7 +230,7 @@
                 android:drawableTop="@drawable/sharp_auto_awesome_24"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:text="Puja"
+                android:text="@string/puja"
                 android:fontFamily="@font/pinot_grigio_modern_w00_bold"
                 android:textAllCaps="false"
                 android:textColor="@color/white">
@@ -253,7 +253,7 @@
                 android:drawableTop="@drawable/baseline_tips_and_updates_24"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:text="Tips"
+                android:text="@string/tips"
                 android:textAllCaps="false"
                 android:fontFamily="@font/pinot_grigio_modern_w00_bold"
                 android:textColor="@color/white">

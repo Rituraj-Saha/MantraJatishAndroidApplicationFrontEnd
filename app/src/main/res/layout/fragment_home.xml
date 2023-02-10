@@ -75,7 +75,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="1. Draw the Yantram as per given instruction."
+                            android:text="@string/_1_draw_the_yantram_as_per_given_instruction"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:fontFamily="@font/eigerdals_medium"
@@ -94,7 +94,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="1. Draw the Yantram as per given instruction."
+                            android:text="@string/_2_listen_and_try_to_chant_the_mantra_as_per_given_instruction"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:fontFamily="@font/eigerdals_medium"
@@ -113,7 +113,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="1. Draw the Yantram as per given instruction."
+                            android:text="@string/_3_perform_puja_of_the_mentioned_deity_god"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:fontFamily="@font/eigerdals_medium"
@@ -131,7 +131,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="1. Draw the Yantram as per given instruction."
+                            android:text="@string/_4_try_to_follow_the_tips"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:fontFamily="@font/eigerdals_medium"

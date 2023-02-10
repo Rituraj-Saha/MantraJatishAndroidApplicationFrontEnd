@@ -20,7 +20,7 @@
             android:id="@+id/txtHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Your\n Customise Jantram"
+            android:text="@string/your_n_customise_jantram"
             android:textSize="25dp"
             android:fontFamily="@font/eigerdals_medium"
             android:textStyle="bold"
