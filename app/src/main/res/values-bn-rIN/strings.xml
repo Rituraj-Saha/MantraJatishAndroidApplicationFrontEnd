@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Matrajayotish</string>
     <string name="your_n_customise_mantra">আপনার\n নির্ধারিত মন্ত্র</string>
+    <string name="general_n_purpose_guidelines">সাধারণ\n নিয়মাবলী</string>
 </resources>

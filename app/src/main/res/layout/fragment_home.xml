@@ -40,7 +40,7 @@
             android:id="@+id/txtHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="General\n purpose Guidelines"
+            android:text="@string/general_n_purpose_guidelines"
             android:textSize="25dp"
             android:layout_below="@+id/homImg"
             android:fontFamily="@font/eigerdals_medium"

@@ -1,7 +1,9 @@
 package com.technologiyagroup.matrajayotish.ui
 
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.Bundle
@@ -13,6 +15,8 @@ import com.technologiyagroup.matrajayotish.MainActivity
 import com.technologiyagroup.matrajayotish.R
 import com.technologiyagroup.matrajayotish.databinding.ActivityHomeBinding
 import com.technologiyagroup.matrajayotish.ui.fragments.*
+import com.technologiyagroup.matrajayotish.util.Constants
+import com.technologiyagroup.matrajayotish.util.Logger
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
@@ -27,25 +31,64 @@ class HomeActivity : AppCompatActivity() {
     lateinit var homeFragment: HomeFragment
     lateinit var pujaFragment: PujaFragment
     lateinit var tipsFragment: TipsFragment
-
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
-        binding.swLang.setOnCheckedChangeListener { compoundButton, b ->
-            val message = if (b) "BN" else "EN"
-           var myLocale = Locale(message)
-            val res: Resources = resources
-            val dm: DisplayMetrics = res.getDisplayMetrics()
-            val conf: Configuration = res.getConfiguration()
-            conf.locale = myLocale
-            res.updateConfiguration(conf, dm)
-//            val refresh = Intent(this, HomeActivity::class.java)
-//            startActivity(refresh);
-            GenFuns.replaceFragment(mantramFragment,this,binding.frameHome)
+
+        if(intent.getStringExtra("CURRENT_LANG")!=null){
+            if(intent.getStringExtra("CURRENT_LANG").equals("BN"))
+            {
+                binding.swLang.isChecked = false;
+            }
+            else{
+                binding.swLang.isChecked = true;
+            }
         }
+        else
+        {
+            binding.swLang.isChecked = true;
+        }
+
+
+
+        binding.swLang.setOnClickListener {
+            if( binding.swLang.isChecked)
+            {
+                val message = "EN"
+                var myLocale = Locale(message)
+                val res: Resources = resources
+                val dm: DisplayMetrics = res.getDisplayMetrics()
+                val conf: Configuration = res.getConfiguration()
+                conf.locale = myLocale
+                res.updateConfiguration(conf, dm)
+                val refresh = Intent(this, HomeActivity::class.java)
+                Logger.log("lang",message)
+                refresh.putExtra("CURRENT_LANG",message)
+                startActivity(refresh);
+                finish()
+            }
+            else
+            {
+                val message = "BN"
+                var myLocale = Locale(message)
+                val res: Resources = resources
+                val dm: DisplayMetrics = res.getDisplayMetrics()
+                val conf: Configuration = res.getConfiguration()
+                conf.locale = myLocale
+                res.updateConfiguration(conf, dm)
+                val refresh = Intent(this, HomeActivity::class.java)
+                Logger.log("lang",message)
+                refresh.putExtra("CURRENT_LANG",message)
+                startActivity(refresh);
+                finish()
+            }
+        }
+
+
 
         mantramFragment = MantramFragment();
         jantramFragment = JantramFragment()
