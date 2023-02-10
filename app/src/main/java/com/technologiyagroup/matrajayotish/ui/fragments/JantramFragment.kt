@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
@@ -62,20 +63,20 @@ class JantramFragment : Fragment() {
         jantramViewModel.jantramResponse.observe(this){
             when(it) {
                 is NetworkResult.Loading -> {
-                    //binding.progressbar.isVisible = it.isLoading
+                    binding.progressbar.isVisible = it.isLoading
                     Logger.log("userNetwork","in loading..")
                 }
 
                 is NetworkResult.Failure -> {
-//                    Toast.makeText(this, it.errorMessage, Toast.LENGTH_SHORT).show()
-//                    binding.progressbar.isVisible = false
+                    Toast.makeText(this.requireContext(), it.errorMessage, Toast.LENGTH_SHORT).show()
+                    binding.progressbar.isVisible = false
 
                     Logger.log("userNetwork","failed"+it.errorMessage)
                     Toast.makeText(this.requireContext(),"Error occured", Toast.LENGTH_LONG).show()
                 }
                 is  NetworkResult.Success -> {
 //                    movieAdapter.updateMovies(it.data)
-//                    binding.progressbar.isVisible = false
+                    binding.progressbar.isVisible = false
                     Logger.log("userNetwork",it.data.responseBody.toString())
                     if(it.data.responseCode.equals("200"))
                     {

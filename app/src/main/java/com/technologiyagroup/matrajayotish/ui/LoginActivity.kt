@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.technologiyagroup.bookmypujo.utils.GenFuns
 import com.technologiyagroup.matrajayotish.databinding.ActivityLoginBinding
@@ -40,13 +41,13 @@ class LoginActivity : AppCompatActivity() {
         userViewModel.userResponse.observe(this) {
             when(it) {
                 is NetworkResult.Loading -> {
-                    //binding.progressbar.isVisible = it.isLoading
+                    binding.progressbar.isVisible = it.isLoading
                     Logger.log("userNetwork","in loading..")
                 }
 
                 is NetworkResult.Failure -> {
-//                    Toast.makeText(this, it.errorMessage, Toast.LENGTH_SHORT).show()
-//                    binding.progressbar.isVisible = false
+                    Toast.makeText(this, it.errorMessage, Toast.LENGTH_SHORT).show()
+                    binding.progressbar.isVisible = false
 
                     Logger.log("userNetwork","failed"+it.errorMessage)
                     Toast.makeText(this,"Error occured",Toast.LENGTH_LONG).show()
@@ -54,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
 
                 is  NetworkResult.Success -> {
 //                    movieAdapter.updateMovies(it.data)
-//                    binding.progressbar.isVisible = false
+                    binding.progressbar.isVisible = false
                     Logger.log("userNetwork",it.data.responseBody.user.toString())
                     if(it.data.responseCode.equals("200"))
                     {
