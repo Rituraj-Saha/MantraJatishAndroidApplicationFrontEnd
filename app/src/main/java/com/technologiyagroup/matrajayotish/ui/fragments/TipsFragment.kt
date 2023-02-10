@@ -112,7 +112,7 @@ class TipsFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         lifecycleScope.launch {
-            tipsViewModel.getTips(GenFuns.getStarIdFromSp(this@TipsFragment.requireContext()));
+            tipsViewModel.getTips(GenFuns.getStarIdFromSp(this@TipsFragment.requireContext()),resources.configuration.locale.language);
         }
 
     }

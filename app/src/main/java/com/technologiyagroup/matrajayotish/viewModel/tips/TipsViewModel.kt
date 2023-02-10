@@ -19,9 +19,9 @@ class TipsViewModel @Inject constructor(
 ) : ViewModel(){
     private var _tipsResponse = MutableLiveData<NetworkResult<TipsResponse>>()
     val tipsResponse: LiveData<NetworkResult<TipsResponse>> = _tipsResponse
-    suspend fun getTips(star_id:String) {
+    suspend fun getTips(star_id:String,lang:String) {
         viewModelScope.launch {
-            tipsRepository.getTips(star_id).collect {
+            tipsRepository.getTips(star_id,lang).collect {
                 _tipsResponse.postValue(it)
             }
         }

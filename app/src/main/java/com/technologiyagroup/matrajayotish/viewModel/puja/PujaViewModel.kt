@@ -18,9 +18,9 @@ class PujaViewModel @Inject constructor(
 ) : ViewModel()  {
     private var _pujaResponse = MutableLiveData<NetworkResult<PujaResponse>>()
     val pujaResponse: LiveData<NetworkResult<PujaResponse>> = _pujaResponse
-    suspend fun getPuja(star_id:String) {
+    suspend fun getPuja(star_id:String,lang:String) {
         viewModelScope.launch {
-            pujaRepostory.getPuja(star_id).collect {
+            pujaRepostory.getPuja(star_id,lang).collect {
                 _pujaResponse.postValue(it)
             }
         }

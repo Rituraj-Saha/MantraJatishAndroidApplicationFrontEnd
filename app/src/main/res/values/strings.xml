@@ -3,9 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="zero" translatable="false">0:00</string>
-    <string name="your_n_customise_mantra">Your\n Customise Mantra</string>
-    <string name="general_n_purpose_guidelines">General\n purpose Guidelines</string>
-    <string name="your_n_customise_jantram">Your\n Customise Jantram</string>
+    <string name="your_n_customise_mantra">Your\nCustomise Mantra</string>
+    <string name="general_n_purpose_guidelines">General\npurpose Guidelines</string>
+    <string name="your_n_customise_jantram">Your\nCustomise Jantram</string>
     <string name="_1_draw_the_yantram_as_per_given_instruction">1. Draw the Yantram as per given instruction.</string>
     <string name="_2_listen_and_try_to_chant_the_mantra_as_per_given_instruction">2. Listen and try to chant the mantra as per given instruction</string>
     <string name="_3_perform_puja_of_the_mentioned_deity_god">3. Perform puja of the mentioned deity(god)</string>
@@ -14,4 +14,6 @@
     <string name="jantram">Jantram</string>
     <string name="puja">Puja</string>
     <string name="tips">Tips</string>
+    <string name="your_pujo_n_guidelines">Your Pujo\nGuidelines</string>
+    <string name="your_valuable_n_tips">Your valuable\nTips</string>
 </resources>

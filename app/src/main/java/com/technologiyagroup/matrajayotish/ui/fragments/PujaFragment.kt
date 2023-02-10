@@ -112,7 +112,7 @@ class PujaFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         lifecycleScope.launch {
-            pujaViewModel.getPuja(GenFuns.getStarIdFromSp(this@PujaFragment.requireContext()));
+            pujaViewModel.getPuja(GenFuns.getStarIdFromSp(this@PujaFragment.requireContext()),resources.configuration.locale.language);
         }
 
     }
