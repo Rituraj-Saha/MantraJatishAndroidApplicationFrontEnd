@@ -59,24 +59,35 @@ class LoginActivity : AppCompatActivity() {
                     Logger.log("userNetwork",it.data.responseBody.user.toString())
                     if(it.data.responseCode.equals("200"))
                     {
-                        val editor:SharedPreferences.Editor =  sharedPreferences.edit()
-                        editor.putString(Constants.UID,it.data.responseBody.user.id.toString())
-                        editor.putString(Constants.UNAME,it.data.responseBody.user.name.toString())
-                        editor.putString(Constants.UPHONE,it.data.responseBody.user.phone.toString())
-                        editor.putString(Constants.DATE_OF_BIRTH,it.data.responseBody.user.dateOfBirth.toString())
-                        editor.putString(Constants.TIME_OF_BIRTH,it.data.responseBody.user.timeOfBirth.toString())
-                        editor.putString(Constants.PLACE_OF_BIRTH,it.data.responseBody.user.placeOfBirth.toString())
-                        editor.putString(Constants.REGESTRATION_DATE,it.data.responseBody.user.registrationDate.toString())
-                        editor.putString(Constants.PAYEMENT_STATUS,it.data.responseBody.user.paymentStatus.toString())
-                        editor.putString(Constants.PAYMENT_AMT,it.data.responseBody.user.paymentAmt.toString())
-                        editor.putString(Constants.PAYMENT_DATE,it.data.responseBody.user.paymentDate.toString())
-                        editor.putString(Constants.STAR_ID,it.data.responseBody.user.starId.toString())
-                        editor.putString(Constants.SESSION_STATUS,it.data.responseBody.user.sessionStatus.toString())
-                        editor.apply()
-                        editor.commit()
-                        val intent = Intent(this,HomeActivity::class.java)
-                        startActivity(intent)
-                        finish()
+                        //Implement payment status
+                        if(it.data.responseBody.user.paymentStatus.toString().equals("paid")){
+
+                            val editor:SharedPreferences.Editor =  sharedPreferences.edit()
+                            editor.putString(Constants.UID,it.data.responseBody.user.id.toString())
+                            editor.putString(Constants.UNAME,it.data.responseBody.user.name.toString())
+                            editor.putString(Constants.UPHONE,it.data.responseBody.user.phone.toString())
+                            editor.putString(Constants.DATE_OF_BIRTH,it.data.responseBody.user.dateOfBirth.toString())
+                            editor.putString(Constants.TIME_OF_BIRTH,it.data.responseBody.user.timeOfBirth.toString())
+                            editor.putString(Constants.PLACE_OF_BIRTH,it.data.responseBody.user.placeOfBirth.toString())
+                            editor.putString(Constants.REGESTRATION_DATE,it.data.responseBody.user.registrationDate.toString())
+                            editor.putString(Constants.PAYEMENT_STATUS,it.data.responseBody.user.paymentStatus.toString())
+                            editor.putString(Constants.PAYMENT_AMT,it.data.responseBody.user.paymentAmt.toString())
+                            editor.putString(Constants.PAYMENT_DATE,it.data.responseBody.user.paymentDate.toString())
+                            editor.putString(Constants.STAR_ID,it.data.responseBody.user.starId.toString())
+                            editor.putString(Constants.SESSION_STATUS,it.data.responseBody.user.sessionStatus.toString())
+                            editor.apply()
+                            editor.commit()
+
+                            //Implement payment status
+
+                            val intent = Intent(this,HomeActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
+                        else
+                        {
+                            Toast.makeText(this,"Payment Error occured please contact guruji",Toast.LENGTH_LONG)
+                        }
                     }
                     else{
                         Toast.makeText(this,"Error occured",Toast.LENGTH_LONG)
