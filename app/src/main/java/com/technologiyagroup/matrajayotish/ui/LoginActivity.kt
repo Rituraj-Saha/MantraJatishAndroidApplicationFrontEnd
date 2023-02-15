@@ -86,7 +86,7 @@ class LoginActivity : AppCompatActivity() {
                         }
                         else
                         {
-                            Toast.makeText(this,"Payment Error occured please contact guruji",Toast.LENGTH_LONG)
+                            Toast.makeText(this,"Payment Error occured please contact guruji",Toast.LENGTH_LONG).show()
                         }
                     }
                     else{
