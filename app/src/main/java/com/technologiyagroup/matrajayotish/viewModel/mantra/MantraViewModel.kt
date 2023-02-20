@@ -24,4 +24,14 @@ class MantraViewModel @Inject constructor(
             }
         }
     }
+
+    private var _mantraResponseInfo = MutableLiveData<NetworkResult<MantramResponse>>()
+    val mantraResponseInfo: LiveData<NetworkResult<MantramResponse>> = _mantraResponseInfo
+    suspend fun getMantraInfo(star_id:String,lang:String) {
+        viewModelScope.launch {
+            mantraRepository.getMantraInfo(star_id,lang).collect {
+                _mantraResponseInfo.postValue(it)
+            }
+        }
+    }
 }

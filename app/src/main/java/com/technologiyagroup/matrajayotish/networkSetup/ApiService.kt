@@ -20,6 +20,9 @@ interface ApiService {
     @GET("/api/user/star/get-mantram")
     suspend fun getMantra(@Query("starid") star_id:String) : MantramResponse
 
+    @GET("/api/user/star/get-mantram-info")
+    suspend fun getMantraInfo(@Query("starid") star_id:String,@Query("lang") lang:String) : MantramResponse
+
     @GET("/api/user/star/get-puja")
     suspend fun getPuja(@Query("starid") star_id:String,@Query("lang") lang:String) : PujaResponse
 
