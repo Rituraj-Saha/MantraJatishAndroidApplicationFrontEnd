@@ -12,10 +12,12 @@ import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 import com.technologiyagroup.bookmypujo.utils.GenFuns
 import com.technologiyagroup.matrajayotish.R
+import com.technologiyagroup.matrajayotish.adaptor.RecyclerViewAdaptor
 import com.technologiyagroup.matrajayotish.databinding.FragmentJantramBinding
 import com.technologiyagroup.matrajayotish.model.user.NetworkResult
 import com.technologiyagroup.matrajayotish.ui.HomeActivity
@@ -90,6 +92,39 @@ class JantramFragment : Fragment() {
                 }
             }
         }
+        binding.recyclJantramInfo.layoutManager = LinearLayoutManager(this.requireContext())
+
+        jantramViewModel.jantramResponseInfo.observe(this){
+            when(it) {
+                is NetworkResult.Loading -> {
+                    binding.progressbar.isVisible = it.isLoading
+                    Logger.log("userNetwork","in loading..")
+                }
+
+                is NetworkResult.Failure -> {
+                    Toast.makeText(this.requireContext(), it.errorMessage, Toast.LENGTH_SHORT).show()
+                    binding.progressbar.isVisible = false
+
+                    Logger.log("userNetwork","failed"+it.errorMessage)
+                    Toast.makeText(this.requireContext(),"Error occured", Toast.LENGTH_LONG).show()
+                }
+                is  NetworkResult.Success -> {
+//                    movieAdapter.updateMovies(it.data)
+                    binding.progressbar.isVisible = false
+                    Logger.log("userNetwork",it.data.responseBody.toString())
+                    if(it.data.responseCode.equals("200"))
+                    {
+                        val adapter = RecyclerViewAdaptor(GenFuns.commaSeparatedToList(it.data.responseBody))
+                        binding.recyclJantramInfo.adapter = adapter
+
+                    }
+                    else{
+                        Toast.makeText(this.requireContext(),"Error occured", Toast.LENGTH_LONG)
+                        Logger.log("userNetwork","Error occurerd")
+                    }
+                }
+            }
+        }
 
         return view
     }
@@ -98,6 +133,7 @@ class JantramFragment : Fragment() {
         super.onStart()
         lifecycleScope.launch {
             jantramViewModel.getJantram(GenFuns.getStarIdFromSp(this@JantramFragment.requireContext()));
+            jantramViewModel.getJantramInfo(GenFuns.getStarIdFromSp(this@JantramFragment.requireContext()),resources.configuration.locale.language)
         }
 
     }

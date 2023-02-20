@@ -14,4 +14,12 @@ class PujaRepository @Inject constructor(private val apiService: ApiService){
     }.catch { e ->
         emit(NetworkResult.Failure(e.message ?: "Unknown Error"))
     }
+
+    suspend fun getGenInfo(star_id:String,lang:String) = flow {
+        emit(NetworkResult.Loading(true))
+        val response = apiService.getGenInfo(star_id,lang)
+        emit(NetworkResult.Success(response))
+    }.catch { e ->
+        emit(NetworkResult.Failure(e.message ?: "Unknown Error"))
+    }
 }

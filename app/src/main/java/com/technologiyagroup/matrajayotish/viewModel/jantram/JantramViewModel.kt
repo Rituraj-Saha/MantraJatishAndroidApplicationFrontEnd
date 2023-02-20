@@ -27,4 +27,14 @@ class JantramViewModel @Inject constructor(
             }
         }
     }
+
+    private var _jantramResponseInfo = MutableLiveData<NetworkResult<JantramResponse>>()
+    val jantramResponseInfo: LiveData<NetworkResult<JantramResponse>> = _jantramResponseInfo
+    suspend fun getJantramInfo(star_id:String,lang:String) {
+        viewModelScope.launch {
+            jantramRepostory.getJantramInfo(star_id,lang).collect {
+                _jantramResponseInfo.postValue(it)
+            }
+        }
+    }
 }

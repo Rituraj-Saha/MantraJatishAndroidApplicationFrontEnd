@@ -25,4 +25,15 @@ class PujaViewModel @Inject constructor(
             }
         }
     }
+
+    private var _genInfoResponse = MutableLiveData<NetworkResult<PujaResponse>>()
+    val genInfoResponse: LiveData<NetworkResult<PujaResponse>> = _genInfoResponse
+
+    suspend fun getGenInfo(star_id:String,lang:String) {
+        viewModelScope.launch {
+            pujaRepostory.getGenInfo(star_id,lang).collect {
+                _genInfoResponse.postValue(it)
+            }
+        }
+    }
 }
