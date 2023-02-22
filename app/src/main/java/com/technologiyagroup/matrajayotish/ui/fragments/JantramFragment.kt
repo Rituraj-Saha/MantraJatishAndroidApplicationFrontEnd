@@ -14,6 +14,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.bumptech.glide.annotation.GlideModule
 import com.squareup.picasso.Picasso
 import com.technologiyagroup.bookmypujo.utils.GenFuns
 import com.technologiyagroup.matrajayotish.R
@@ -39,6 +40,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 @AndroidEntryPoint
+@GlideModule
 class JantramFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
