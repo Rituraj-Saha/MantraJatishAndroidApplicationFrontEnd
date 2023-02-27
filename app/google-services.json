@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "685308104307",
+    "project_id": "mantrayatish",
+    "storage_bucket": "mantrayatish.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685308104307:android:e19ccfdd2a60dd41e32406",
+        "android_client_info": {
+          "package_name": "com.technologiyagroup.matrajayotish"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685308104307-7i92pjs89mf27kgrco64e5kkqshkio56.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.technologiyagroup.matrajayotish",
+            "certificate_hash": "2d3dbc456d5b5987f681d173de50483b87b84002"
+          }
+        },
+        {
+          "client_id": "685308104307-kbmrelk3iuv91faao1jek4heclfkq482.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAha0CjqBdBhRVMeTrBbstGdJ1X2uU0VFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685308104307-kbmrelk3iuv91faao1jek4heclfkq482.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
